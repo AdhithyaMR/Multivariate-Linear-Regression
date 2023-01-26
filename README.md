@@ -23,26 +23,20 @@ Find the coefficients using .coef_ and intercept using .intercept_ .
 Predict the liner regression using regr.predict() method and display the result.
 
 ## Program:
-```python
+'''
+Developed by: Adhithya M R
+Reference number: 22002941
+'''
 import pandas as pd
 from sklearn import linear_model
-import matplotlib.pyplot as plt
-
 df=pd.read_csv("cars.csv")
-
-x=df[['Weight', 'Volume']]
+x=df[['Weight','Volume']]
 y=df['CO2']
-
 regr=linear_model.LinearRegression()
 regr.fit(x,y)
-
-#coefficients and intercept of model
-print('Coefficients:', regr.coef_)
+print('Coefficients: ',regr.coef_)
 print('Intercept:',regr.intercept_)
-
-#predict the CO2 emission of a car when the weight is 3000 kg, and the volume is 1300cm3
-
-predictedCO2= regr.predict([[3300, 1300]])
+predictedCO2=regr.predict([[3300,1300]])
 print('Predicted CO2 for the corresponding weight and volume',predictedCO2)
 ```
 
